@@ -31,7 +31,7 @@ const Card = (article) => {
   headLine.classList.add('headline');
   author.classList.add('author');
   myImg.classList.add('img-container');
-  img.src = article.authorPhoto;
+  img.setAttribute('src', article.authorPhoto);
 
   myCard.appendChild(headLine);
   myCard.appendChild(author);

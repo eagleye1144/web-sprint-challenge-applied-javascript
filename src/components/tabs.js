@@ -1,3 +1,5 @@
+
+
 const Tabs = (topics) => {
   // TASK 3
   // ---------------------
@@ -13,6 +15,15 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
+  const holdTopic = document.createElement('div');
+    holdTopic.classList.add('topics');
+    topics.forEach((topic) => {
+      const newTopic = document.createElement('div');
+      newTopic.classList.add('tab');
+      newTopic.textContent = topic;
+      holdTopic.appendChild(newTopic);
+
+  })
 }
 
 const tabsAppender = (selector) => {

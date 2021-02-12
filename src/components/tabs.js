@@ -1,4 +1,4 @@
-
+import axios from "axios";
 
 const Tabs = (topics) => {
   // TASK 3
@@ -34,6 +34,13 @@ const tabsAppender = (selector) => {
   // Find the array of topics inside the response, and create the tabs using the Tabs component.
   // Append the tabs to the element in the DOM that matches the selector passed to the function.
   //
+  axios.get("https://lambda-times-api.herokuapp.com/topics")
+    .then((response) => {
+      const myData = response.data.topics;
+      const mySelector = document.querySelector(selector);
+      const post = Tabs(myData);
+      mySelector.append(post);
+    });
 }
 
 export { Tabs, tabsAppender }
